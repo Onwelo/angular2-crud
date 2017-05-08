@@ -1,18 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AppNavComponent } from './nav.component';
+import { CoreModule } from './core/core.module';
+import { CarsModule } from './cars/cars.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppNavComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    CoreModule.forRoot(),
+    CarsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
