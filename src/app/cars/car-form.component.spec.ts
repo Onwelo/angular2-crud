@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { CarFormComponent } from './car-form.component';
+import { FormBuilder } from '@angular/forms';
 
 describe('CarFormComponent', () => {
   let component: CarFormComponent;
@@ -8,7 +9,11 @@ describe('CarFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarFormComponent ]
+      declarations: [ CarFormComponent ],
+      providers: [
+        FormBuilder
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

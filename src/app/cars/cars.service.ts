@@ -14,27 +14,27 @@ export class CarsService {
     private options = new RequestOptions({ headers: this.headers });
     constructor(private http: Http) { }
 
-    get(limit: number): Observable<Car[]> {
+    get(): Observable<Car[]> {
         return this.http.get(this.url, this.options)
             .map((res: Response) => res.json())
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+            .catch((error: any) => Observable.throw('Server error'));
     }
 
     getOne(id: number): Observable<Car> {
         return this.http.get(this.url + `/${id}`, this.options)
             .map((res: Response) => res.json())
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+            .catch((error: any) => Observable.throw('Server error'));
     }
 
     save(car: Car): Observable<Car[]> {
         return this.http.post(this.url, car, this.options)
             .map((res: Response) => res.json())
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+            .catch((error: any) => Observable.throw('Server error'));
     }
 
     delete(car: Car): Observable<Car[]> {
         return this.http.delete(this.url + `/${car._id}`, this.options)
             .map((res: Response) => res.json())
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+            .catch((error: any) => Observable.throw('Server error'));
     }
 }

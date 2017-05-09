@@ -14,7 +14,7 @@ export class CarsListComponent implements OnInit {
   cars: Car[];
   constructor(router: Router, Cars: CarsService) {
     this.router = router;
-    Cars.get(20).subscribe(cars => this.cars = cars);
+    Cars.get().subscribe(cars => this.cars = cars);
   }
 
   ngOnInit() {
