@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule,
     NgbModule,
   ],
   exports: [
@@ -16,7 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    NgbModule
+    NgbModule,
   ]
 })
 export class SharedModule { }
