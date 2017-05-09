@@ -1,0 +1,15 @@
+input {
+  padding: 10px 0;
+}
+
+#usr, #pass {
+  padding: 5px 10px;
+}
+
+.card-block .info {
+  color: cornflowerblue;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row pb-3">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="card mb-1">
+        <div class="card-block">
+          <h4 class="card-title">Login</h4>
+          <p class="info">admin/1234</p>
+          <div class="form-group" [class.hidden]="authService.isLoggedIn === true">
+            <label for="usr">Name:</label>
+            <input #usr type="text" class="form-control" id="usr">
+          </div>
+          <div class="form-group" [class.hidden]="authService.isLoggedIn === true">
+            <label for="pass">Password:</label>
+            <input #pass type="password" class="form-control" id="pass">
+          </div>
+          <h6 *ngIf="!authService.isLoggedIn" class="card-subtitle mb-2 text-muted">Please log in:</h6>
+          <button (click)="login(usr.value, pass.value)"  *ngIf="!authService.isLoggedIn" class="btn btn-sm btn-primary">Login</button>
+          <h6 *ngIf="authService.isLoggedIn" class="card-subtitle mb-2 text-muted">You can log out:</h6>
+          <button (click)="logout()" *ngIf="authService.isLoggedIn" class="btn btn-sm btn-primary">Logout</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>
