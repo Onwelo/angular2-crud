@@ -7,8 +7,8 @@ describe('angular2-crud App', () => {
     page = new Angular2CrudPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display navbar brand message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getNavbarText()).toEqual('Angular 2 CRUD');
   });
 });
