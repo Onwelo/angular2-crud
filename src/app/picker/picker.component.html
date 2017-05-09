@@ -1,11 +1,13 @@
-<div [(ngModel)]="model" ngbRadioGroup>
-  <label class="btn btn-secondary btn-sm">
-    <input type="radio" [value]="0"> Anon User
-  </label>
-  <label class="btn btn-secondary btn-sm">
-    <input type="radio" [value]="1"> Moderator
-  </label>
-  <label class="btn btn-secondary btn-sm">
-    <input type="radio" [value]="2"> Admin
-  </label>
-</div>
+<form [formGroup]="radioGroupForm">
+  <div ngbRadioGroup formControlName="model">
+    <label class="btn btn-secondary btn-sm">
+      <input type="radio" [value]="0"> Anon User
+    </label>
+    <label class="btn btn-secondary btn-sm">
+      <input type="radio" [value]="1"> Moderator
+    </label>
+    <label class="btn btn-secondary btn-sm">
+      <input type="radio" [value]="2"> Admin
+    </label>
+  </div>
+</form>

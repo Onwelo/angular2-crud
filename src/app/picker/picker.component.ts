@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'of-picker',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./picker.component.css']
 })
 export class PickerComponent implements OnInit {
-  model = 0;
-  constructor() { }
+  public radioGroupForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.radioGroupForm = this.formBuilder.group({
+      model: 0
+    });
   }
 
 }
